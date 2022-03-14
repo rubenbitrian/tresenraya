@@ -1,0 +1,17 @@
+<div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12">
+        <div class="jumbotron">
+            <h1 class="display-4">Juego del 3 en raya</h1>
+            <p class="lead">Juego para 2 jugadores.</p>
+            <hr class="my-4">
+            {% if partida is defined and partida is not null and not partida.finalizada %}
+                En estos momentos ya hay una partida en curso. Termínala para poder comenzar una nueva.
+            {% else %}
+                <button class="btn btn-success btn-md" role="button" data-bs-toggle="modal"
+                        data-bs-target="#nuevaPartida">
+                    <i class="fas fa-th"></i> Nueva partida
+                </button>
+            {% endif %}
+        </div>
+    </div>
+</div>

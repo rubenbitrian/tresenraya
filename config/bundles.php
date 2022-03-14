@@ -1,15 +1,3 @@
 <?php
 
-return [
-    Symfony\Bundle\FrameworkBundle\FrameworkBundle::class => ['all' => true],
-    Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle::class => ['all' => true],
-    Doctrine\Bundle\DoctrineBundle\DoctrineBundle::class => ['all' => true],
-    Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle::class => ['all' => true],
-    Symfony\Bundle\SecurityBundle\SecurityBundle::class => ['all' => true],
-    Symfony\Bundle\TwigBundle\TwigBundle::class => ['all' => true],
-    Twig\Extra\TwigExtraBundle\TwigExtraBundle::class => ['all' => true],
-    Symfony\Bundle\WebProfilerBundle\WebProfilerBundle::class => ['dev' => true, 'test' => true],
-    Symfony\Bundle\MonologBundle\MonologBundle::class => ['all' => true],
-    Symfony\Bundle\DebugBundle\DebugBundle::class => ['dev' => true],
-    Symfony\Bundle\MakerBundle\MakerBundle::class => ['dev' => true],
-];
+return [Symfony\Bundle\FrameworkBundle\FrameworkBundle::class => ['all' => TRUE], Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle::class => ['all' => TRUE], Doctrine\Bundle\DoctrineBundle\DoctrineBundle::class => ['all' => TRUE], Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle::class => ['all' => TRUE], Symfony\Bundle\SecurityBundle\SecurityBundle::class => ['all' => TRUE], Symfony\Bundle\TwigBundle\TwigBundle::class => ['all' => TRUE], Twig\Extra\TwigExtraBundle\TwigExtraBundle::class => ['all' => TRUE], Symfony\Bundle\WebProfilerBundle\WebProfilerBundle::class => ['dev' => TRUE, 'test' => TRUE], Symfony\Bundle\MonologBundle\MonologBundle::class => ['all' => TRUE], Symfony\Bundle\DebugBundle\DebugBundle::class => ['dev' => TRUE], Symfony\Bundle\MakerBundle\MakerBundle::class => ['dev' => TRUE],];

@@ -1,0 +1,21 @@
+<h5 class="card-title"><i class="fas fa-user"></i> Jugador 1</h5>
+<p class="ml-5"><span class="font-weight-bold">Usuario</span>: {{ partida.jugador1.usuario }}</p>
+{% if partida.jugador1.nombre %}
+    <p class="ml-5"><span class="font-weight-bold">Usuario</span>: {{ partida.jugador1.nombre }}</p>
+{% endif %}
+{% if partida.jugador1.apellidos %}
+    <p class="ml-5"><span class="font-weight-bold">Usuario</span>: {{ partida.jugador1.apellidos }}</p>
+{% endif %}
+<p class="ml-5"><span class="font-weight-bold">Ficha</span>: <i class="fas fa-times"></i></p>
+
+<hr>
+
+<h5 class="card-title"><i class="fas fa-user"></i> Jugador 2</h5>
+<p class="ml-5"><span class="font-weight-bold">Usuario</span>: {{ partida.jugador2.usuario }}</p>
+{% if partida.jugador2.nombre %}
+    <p class="ml-5"><span class="font-weight-bold">Usuario</span>: {{ partida.jugador2.nombre }}</p>
+{% endif %}
+{% if partida.jugador2.apellidos %}
+    <p class="ml-5"><span class="font-weight-bold">Usuario</span>: {{ partida.jugador2.apellidos }}</p>
+{% endif %}
+<p class="ml-5"><span class="font-weight-bold">Ficha</span>: <i class="far fa-circle"></i></p>

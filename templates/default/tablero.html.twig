@@ -1,0 +1,33 @@
+<table class="table table-bordered">
+    <tbody>
+    {% if fichas is defined and fichas is not empty %}
+        {% for indiceFila in fichas | keys %}
+            <tr>
+                {% for indiceColumna, ficha in fichas[indiceFila] %}
+                    <td class="text-center">
+                        {% if ficha %}
+                            {% set simboloFicha = ficha.tipo.simbolo %}
+                            {% if simboloFicha == "X" %}
+                                <i class="fas fa-times fa-3x"></i>
+                            {% elseif simboloFicha == "O" %}
+                                <i class="far fa-circle fa-3x"></i>
+                            {% else %}
+                                <a role="button" class="btn btn-xs btn-info"><i class="fas fa-align-justify"></i></a>
+                            {% endif %}
+                        {% else %}
+                            {% if partida.enCurso or not partida.finalizada %}
+                                <a role="button" class="btn btn-xs btn-info"
+                                   href="{{ path('poner_ficha', {'partida_id': partida.id, 'fila': indiceFila, 'columna': indiceColumna}) }}">
+                                    <i class="fa-regular fa-square-full"></i>
+                                </a>
+                            {% else %}
+                                <a role="button" class="btn btn-xs btn-info"><i class="fas fa-align-justify"></i></a>
+                            {% endif %}
+                        {% endif %}
+                    </td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    {% endif %}
+    </tbody>
+</table>
