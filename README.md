@@ -1,10 +1,10 @@
 # Tres en raya
 
-_Este programa es una prueba de PHP para Híberus, está realizado con Symfony y bootstrap 5_
+Este programa es una prueba de PHP para Híberus, está realizado con Symfony 5.4 y bootstrap 5
 
 ## Comenzando 🚀
 
-_Para usarlo, basta con clonar el repositorio en local (por ejemplo), una vez clonado, realizar los siguientes pasos_
+Para usarlo de manera local basta con clonar el repositorio en local, una vez clonado, realizar los siguientes pasos:
 * Ejecutar en consola en la raíz del proyecto:
 ```shell
 composer update
@@ -16,7 +16,7 @@ php bin/console doctrine:schema:update --force
 ```
 Para crear las tablas según se han definido en las entidades y ya se podría utilizar en local.
 
-_Más adelante se explica cómo desplagar mediante docker_
+Más adelante se explica cómo desplagar mediante docker
 
 Mira **[Despliegue](#despliegue)** para conocer como desplegar el proyecto en docker.
 
@@ -32,87 +32,54 @@ Para poder desplegar esta aplicación mediante Docker, se necesitan los siguient
 <a name="despliegue"></a>
 ## Despliegue 📦
 
-_Agrega notas adicionales sobre como hacer deploy_
+En este caso ya están los archivos creados, pero en el caso de que no estuvieran, la estructura necesaria es la siguiente:
 
+* ./ <- esto es la raíz del proyecto.
+* ./docker-compose.yml
+* ./php/Dockerfile
+* ./nginx/default.conf
 
-### Instalación 🔧
+Ejecutar el siguiente comando en la raíz del proyecto para construir los contenedores:
 
-_Una serie de ejemplos paso a paso que te dice lo que debes ejecutar para tener un entorno de desarrollo ejecutandose_
+````shell
+docker-compose up -d --build
+````
+Y este otro para acceder al que contendrá la aplicación:
 
-_Dí cómo será ese paso_
+````shell
+docker-compose exec php /bin/bash
+````
 
-```
-Da un ejemplo
-```
+Con este último se accede al directorio raíz del proyecto dentro del contenedor, es decir, donde se deben colocar todos los archivos correspondientes al proyecto.
+Esto se puede hacer, por ejemplo, mediante gestión de versiones, en este caso Git.
 
-_Y repite_
+Si aún no se ha creado el repositorio para el proyecto, se crea y se sincronizan los archivos de local con los del repositorio.
 
-```
-hasta finalizar
-```
+Una vez hecho esto, desde el contenedor, se obtienen los archivos del repositorio y se ejecutan los siguientes comandos:
 
-_Finaliza con un ejemplo de cómo obtener datos del sistema o como usarlos para una pequeña demo_
+Actualizar con composer todas las dependencias del proyecto:
 
-## Ejecutando las pruebas ⚙️
+````shell
+composer update
+````
 
-_Explica como ejecutar las pruebas automatizadas para este sistema_
+Crear las tablas y restricciones de la base de datos:
 
-### Analice las pruebas end-to-end 🔩
+````shell
+php bin/console doctrine:schema:update --force
+````
 
-_Explica que verifican estas pruebas y por qué_
+Con esto ya se puede ejecutar la aplicación en http://localhost:8080/
 
-```
-Da un ejemplo
-```
-
-### Y las pruebas de estilo de codificación ⌨️
-
-_Explica que verifican estas pruebas y por qué_
-
-```
-Da un ejemplo
-```
 ## Construido con 🛠️
 
-_Menciona las herramientas que utilizaste para crear tu proyecto_
+Para la ejecución de este proyecto se han utilizado las siguientes herramientas:
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - El framework web usado
-* [Maven](https://maven.apache.org/) - Manejador de dependencias
-* [ROME](https://rometools.github.io/rome/) - Usado para generar RSS
-
-## Contribuyendo 🖇️
-
-Por favor lee el [CONTRIBUTING.md](https://gist.github.com/villanuevand/xxxxxx) para detalles de nuestro código de conducta, y el proceso para enviarnos pull requests.
-
-## Wiki 📖
-
-Puedes encontrar mucho más de cómo utilizar este proyecto en nuestra [Wiki](https://github.com/tu/proyecto/wiki)
-
-## Versionado 📌
-
-Usamos [SemVer](http://semver.org/) para el versionado. Para todas las versiones disponibles, mira los [tags en este repositorio](https://github.com/tu/proyecto/tags).
-
-## Autores ✒️
-
-_Menciona a todos aquellos que ayudaron a levantar el proyecto desde sus inicios_
-
-* **Andrés Villanueva** - *Trabajo Inicial* - [villanuevand](https://github.com/villanuevand)
-* **Fulanito Detal** - *Documentación* - [fulanitodetal](#fulanito-de-tal)
-
-También puedes mirar la lista de todos los [contribuyentes](https://github.com/your/project/contributors) quíenes han participado en este proyecto. 
+* [Symfony](https://symfony.com/) - El framework web usado.
+* [Composer](https://maven.apache.org/) - Manejador de dependencias.
+* [GitHub](https://github.com/rubenbitrian/tresenraya) - Usado para la gestión de versiones.
 
 ## Licencia 📄
 
-Este proyecto está bajo la Licencia (Tu Licencia) - mira el archivo [LICENSE.md](LICENSE.md) para detalles
+Este proyecto está bajo la Licencia GPU-GPL v.3.0 - mira el archivo [LICENSE.md](LICENSE.md) para más detalles.
 
-## Expresiones de Gratitud 🎁
-
-* Comenta a otros sobre este proyecto 📢
-* Invita una cerveza 🍺 o un café ☕ a alguien del equipo. 
-* Da las gracias públicamente 🤓.
-* etc.
-
-
-
----
-⌨️ con ❤️ por [Villanuevand](https://github.com/Villanuevand) 😊
