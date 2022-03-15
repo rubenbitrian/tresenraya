@@ -1,4 +1,4 @@
-# Título del Proyecto
+# Tres en raya
 
 _Este programa es una prueba de PHP para Híberus, está realizado con Symfony y bootstrap 5_
 
